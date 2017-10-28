@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+    <h:form>
+        <h:outputText value="#{clientManagedBean.getMessage()}"/>
+        <br></br>
+        <h:commandButton action="#{clientManagedBean.checkout()}" value="Checkout"/>
+    </h:form>
+
+    <h:dataTable value="#{clientManagedBean.listAllCategories()}" var="category">
+        <h:column>
+            #{category.name}:
+        </h:column>
+        <h:column>
+            <ui:repeat value="#{category.products}" rendered="#{not empty category.products}" var="product">
+                <h:form>
+                    <h:commandButton action="#{clientManagedBean.addToBasket(product)}" value="#{product.name} #{product.stock}"/>
+                </h:form>
+            </ui:repeat>
+        </h:column>
+    </h:dataTable>
+    <br></br>
+    <h3>Koszyk:</h3>
+    <h:dataTable value="#{clientManagedBean.getOrderList()}" var="order">
+        <h:column>
+            #{order.product.name}
+        </h:column>
+        <h:column>
+            #{order.amount}
+        </h:column>
+    </h:dataTable>
+
+
+</h:body>
+</html>
