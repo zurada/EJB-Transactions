@@ -1,4 +1,4 @@
-# EJB-Transactions - Shop Basket application
+# EJB-Transactions Tutorial - Shop Basket application
 This is an example "Add to basket" project using EJB and TransactionManagement:
 
 This project uses Container managed transactions for adding items to a basket. During the "basket checkout" program updates stock in the DB. But firstly, before commiting transaction it checks the basket's products quantity. If any product's amount is bigger then products in stock (in DB) the transaction is rolled back and in DB there are original values. 
@@ -23,4 +23,4 @@ EJB 3.0 has specified following attributes of transactions, which EJB containers
 
 * NEVER − Indicates if business method executes as part of transaction, then an exception will be thrown.
 
-This project uses REQUIRED, MANDATORY and NOT_SUPPORTED Transaction attibutes.
+This project make use of REQUIRED, MANDATORY and NOT_SUPPORTED Transaction attibutes.
