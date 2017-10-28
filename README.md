@@ -24,3 +24,7 @@ EJB 3.0 has specified following attributes of transactions, which EJB containers
 * NEVER − Indicates if business method executes as part of transaction, then an exception will be thrown.
 
 This project make use of REQUIRED, MANDATORY and NOT_SUPPORTED Transaction attibutes.
+
+## How to start
+
+To run application firstly download the container JBoss Wildfly 11 or newer and deploy war application to the container.
